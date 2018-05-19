@@ -1,0 +1,20 @@
+{
+    "name": "legracieux53/jwt-laravel",
+    "type": "library",
+    "require": {
+        "legracieux53/io" : "v0.1.1-alpha"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nehemie Konan",
+            "email": "nehemiekonan535@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload" : {
+        "psr-4" : {
+            "Lnl\\JWT\\" : "src/"
+        }
+    }
+}
