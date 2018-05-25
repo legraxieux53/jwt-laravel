@@ -1,2 +1,3 @@
 # autre
-<a href="../">lien</a>
+[a relative link](../)
+
