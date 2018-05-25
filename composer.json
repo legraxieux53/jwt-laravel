@@ -2,7 +2,8 @@
     "name": "legracieux53/jwt-laravel",
     "type": "library",
     "require": {
-        "legracieux53/io" : "v0.1.1-alpha"
+        "php" : ">=5.3",
+        "legracieux53/io" : "^v0.1.1-alpha"
     },
     "license": "MIT",
     "authors": [

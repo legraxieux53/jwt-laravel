@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace Lnl\JWT;
 
 /**
@@ -26,13 +26,14 @@ class AuthenticationManager
     private $password_field;
     private $table;
     private $table_path;
+    private $agent;
 
     /**
      * AuthenticationManager constructor.
      */
 	public function __construct()
 	{
-		# code...
+		$this->agent = null;
 	}
 
 	/**
@@ -47,7 +48,8 @@ class AuthenticationManager
             $password_hash = $obj->getAttribute($this->password_field);
             if (password_verify($this->password, $password_hash)) {
                 $token = new Token();
-                $token->init("", $this->table, 3600, $this->username, $this->password);
+                $agent = ($this->agent == null)? $this->table : $this->agent;
+                $token->init("", $agent, 3600, $this->username, $this->password);
                 $token->setToken($token->generate());
                 $token->create();
                 $this->token = $token->getToken();
@@ -137,6 +139,11 @@ class AuthenticationManager
 	public function setToken ($token)
 	{
 		$this->token = $token;
+	}
+
+	public function setAgent($agent)
+	{
+		$this->agent = $agent;
 	}
 
 	/**
