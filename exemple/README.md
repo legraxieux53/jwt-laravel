@@ -1,3 +1,3 @@
 # autre
-[a relative link](../)
+[a relative link](jwt-laravel)
 
